@@ -36,7 +36,6 @@ using ReportLibrary.BusinessRules;
 using ReportLibrary.ReportColumn;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 
 namespace ReportLibrary.OfficeApps
@@ -48,7 +47,7 @@ namespace ReportLibrary.OfficeApps
     public class ExcelDynamicGenerator<D>: BaseGenerator<D>
     {
         Application appExcel;
-        Workbook workbook;
+        dynamic workbook;
         Worksheet worksheet;
 
         public ExcelDynamicGenerator()
@@ -56,8 +55,8 @@ namespace ReportLibrary.OfficeApps
             appExcel = new Application();
             appExcel.Visible = true;
 
-            workbook = appExcel.Workbooks.Add(Missing.Value);
-            worksheet = (Worksheet)workbook.ActiveSheet;
+            workbook = appExcel.Workbooks.Add();
+            worksheet = workbook.ActiveSheet;
         }
         /// <summary>
         /// The <c>GetHeaders</c> override method that gets header data.
@@ -108,7 +107,7 @@ namespace ReportLibrary.OfficeApps
             var dataRange = worksheet.get_Range(BeginRange, EndRange);
             dataRange.Value2 = data;
 
-            workbook.SaveAs("BaoCaoXe.xlsx",XlSaveAsAccessMode.xlShared);
+            workbook.SaveAs("BaoCaoXe.xlsx", XlSaveAsAccessMode.xlShared);
 
             return new StringBuilder("Dữ liệu đã thêm...\n" + "tệp Excel đã tạo có tên BaoCaoXe.xlsx");
         }
