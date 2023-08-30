@@ -47,13 +47,13 @@ namespace ReportLibrary.OfficeApps
     /// </summary>
     public class ExcelTypedGenerator<D>: BaseGenerator<D>
     {
-        ApplicationClass appExcel;
+        Application appExcel;
         Workbook workbook;
         Worksheet worksheet;
 
         public ExcelTypedGenerator()
         {
-            appExcel = new ApplicationClass();
+            appExcel = new Application();
             appExcel.Visible = true;
 
             workbook = appExcel.Workbooks.Add(Missing.Value);

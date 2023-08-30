@@ -52,7 +52,9 @@ namespace ReportLibraryTest
                     Description = "Part #1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames ac turpis. Tortor posuere ac ut consequat semper viverra. Eget egestas purus viverra accumsan. Hac habitasse platea dictumst vestibulum rhoncus. Elementum tempus egestas sed sed risus pretium quam vulputate. Donec massa sapien faucibus et molestie. Urna neque viverra justo nec ultrices dui sapien eget mi.",
                     Count = 3,
                     ItemUnit = "kg",
-                    ItemPrice = 15.95m
+                    ItemPrice = 15.95m,
+                    ItemNote = "",
+                    ISOutStock = "0"
                 },
                 new Inventory
                 {
@@ -60,7 +62,9 @@ namespace ReportLibraryTest
                     Description = "Part #2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames ac turpis. Tortor posuere ac ut consequat semper viverra. Eget egestas purus viverra accumsan. Hac habitasse platea dictumst vestibulum rhoncus. Elementum tempus egestas sed sed risus pretium quam vulputate. Donec massa sapien faucibus et molestie. Urna neque viverra justo nec ultrices dui sapien eget mi.",
                     Count = 1,
                     ItemUnit = "liter",
-                    ItemPrice = 8.95m
+                    ItemPrice = 8.95m,
+                    ItemNote = "Go to Cart",
+                    ISOutStock = "0"
                 },
                 new Inventory
                 {
@@ -68,7 +72,9 @@ namespace ReportLibraryTest
                     Description = "Part #3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames ac turpis. Tortor posuere ac ut consequat semper viverra. Eget egestas purus viverra accumsan. Hac habitasse platea dictumst vestibulum rhoncus. Elementum tempus egestas sed sed risus pretium quam vulputate. Donec massa sapien faucibus et molestie. Urna neque viverra justo nec ultrices dui sapien eget mi.",
                     ItemUnit = "piece",
                     Count = 2,
-                    ItemPrice = 5.95m
+                    ItemPrice = 5.95m,
+                    ItemNote = "Out of stock",
+                    ISOutStock = "1"
                 }
             };
 

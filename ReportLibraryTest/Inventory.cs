@@ -51,5 +51,9 @@ namespace ReportLibraryTest
 
         [ReportColumn("Price", Format = "{0:c}")]
         public decimal ItemPrice { get; set; }
+        [ReportColumn("Note")]
+        public string ItemNote { get; set; }
+        [ReportColumn("Status")]
+        public string ISOutStock { get; set; }
     }
 }

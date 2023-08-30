@@ -41,6 +41,7 @@ namespace ReportLibrary.BusinessRules
         Html,
         Markdown,
         ExcelTyped,
-        ExcelDynamic
+        ExcelDynamic,
+        Pdf
     }
 }

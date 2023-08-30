@@ -136,12 +136,6 @@ namespace ReportLibrary.BusinessRules
                         columns.Add(string.Format(formatter, (long)result)); break;
                     case "String":
                         columns.Add(string.Format(formatter, (string)result)); break;
-                    case "DateTime":
-                        columns.Add(string.Format(formatter, (DateTime)result)); break;
-                    case "Bool":
-                        columns.Add(string.Format(formatter, (bool)result)); break;
-                    case "Byte":
-                        columns.Add(string.Format(formatter, (byte)result)); break;
                     default: break;
                 }
             }

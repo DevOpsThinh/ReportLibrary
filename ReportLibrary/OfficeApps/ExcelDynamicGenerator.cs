@@ -46,13 +46,13 @@ namespace ReportLibrary.OfficeApps
     /// </summary>
     public class ExcelDynamicGenerator<D>: BaseGenerator<D>
     {
-        ApplicationClass appExcel;
+        Application appExcel;
         dynamic workbook;
         Worksheet worksheet;
 
         public ExcelDynamicGenerator()
         {
-            appExcel = new ApplicationClass();
+            appExcel = new Application();
             appExcel.Visible = true;
 
             workbook = appExcel.Workbooks.Add();
