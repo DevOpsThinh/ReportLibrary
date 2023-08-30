@@ -31,6 +31,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
 
+using ReportLibrary.OfficeApps;
 using System;
 using System.Collections.Generic;
 
@@ -60,16 +61,23 @@ namespace ReportLibrary.BusinessRules
         /// <returns></returns>
         BaseGenerator<D> CreateGenerator(ReportTypeEnumeration reportType)
         {
+            Type gType;
+
+            switch (reportType)
+            {
+                case ReportTypeEnumeration.ExcelTyped:
+                    gType = typeof(ExcelTypedGenerator<>); 
+                    break;
+                case ReportTypeEnumeration.ExcelDynamic:
+                    gType = typeof(ExcelDynamicGenerator<>); 
+                    break;
+
+                default: throw new ArgumentException($"Unexpected Report type case: '{reportType}'");
+            }
+
             Type dataType = typeof(D);
-
-            string nameSpace = "ReportLibrary.";
-            string typeName = $"{reportType}Generator`1";
-            string parameterName = $"[[{dataType.FullName}]]";
-
-            string fullyQualifiedTypeName = nameSpace + typeName + parameterName;
-
-            Type gType = Type.GetType(fullyQualifiedTypeName);
-            object generator = Activator.CreateInstance(gType);
+            Type genericType = gType.MakeGenericType(dataType); ;
+            object generator = Activator.CreateInstance(genericType);
 
             return (BaseGenerator<D>)generator;
         }
