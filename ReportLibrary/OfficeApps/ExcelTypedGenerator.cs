@@ -38,6 +38,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using ReportLibrary.BusinessRules;
+using System;
 
 namespace ReportLibrary.OfficeApps
 {
@@ -108,8 +109,10 @@ namespace ReportLibrary.OfficeApps
             var dataRange = worksheet.get_Range(BeginRange, EndRange);
             dataRange.Value2 = data;
 
+            var gui = Guid.NewGuid();
+
             workbook.SaveAs(
-                "BaoCaoXe.xlsx", Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+                $"BaoCaoXe_{gui}.xlsx", Missing.Value, Missing.Value, Missing.Value, Missing.Value,
                 Missing.Value, XlSaveAsAccessMode.xlShared, Missing.Value, Missing.Value,
                 Missing.Value, Missing.Value, Missing.Value);
 

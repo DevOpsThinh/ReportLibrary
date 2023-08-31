@@ -34,6 +34,7 @@ THE SOFTWARE.
 using Microsoft.Office.Interop.Excel;
 using ReportLibrary.BusinessRules;
 using ReportLibrary.ReportColumn;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -107,7 +108,9 @@ namespace ReportLibrary.OfficeApps
             var dataRange = worksheet.get_Range(BeginRange, EndRange);
             dataRange.Value2 = data;
 
-            workbook.SaveAs("BaoCaoXe.xlsx", XlSaveAsAccessMode.xlShared);
+            var gui = Guid.NewGuid();
+
+            workbook.SaveAs($"BaoCaoXe_{gui}.xlsx", XlSaveAsAccessMode.xlShared);
 
             return new StringBuilder("Dữ liệu đã thêm...\n" + "tệp Excel đã tạo có tên BaoCaoXe.xlsx");
         }
