@@ -5,7 +5,7 @@ A dynamic report-building class library with these formats: Excel, Pdf, HTML and
 ## Technology Stack
 - It uses C# based on reflection to read attributes of a class, access type members, and execute methods.
 - It uses the advanced topics of Microsoft's technology document reference: Native interoperability (COM interop programming).
-## Out formattes released
+## Output formats released
 ### An Excel spreadsheet with two options
 - Without dynamic (uses strongly typed code to generate an Excel report).
 - With dynamic (uses dynamic code to generate an Excel report).
