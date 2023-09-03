@@ -132,8 +132,6 @@ namespace ReportLibrary.BusinessRules
                         columns.Add(string.Format(formatter, (double)result)); break;
                     case "Int32":
                         columns.Add(string.Format(formatter, (int)result)); break;
-                    case "Long":
-                        columns.Add(string.Format(formatter, (long)result)); break;
                     case "String":
                         columns.Add(string.Format(formatter, (string)result)); break;
                     default: break;

@@ -54,6 +54,6 @@ namespace ReportLibraryTest
         [ReportColumn("Note")]
         public string ItemNote { get; set; }
         [ReportColumn("Status")]
-        public string ISOutStock { get; set; }
+        public string IsOutStock { get; set; }
     }
 }

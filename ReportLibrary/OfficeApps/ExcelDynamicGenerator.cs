@@ -72,7 +72,7 @@ namespace ReportLibrary.OfficeApps
                 worksheet.Cells[3, i + 1] = detail.Attribute.Name;
             }
 
-            return new StringBuilder("Đề mục đã thêm...\n");
+            return new StringBuilder("Added header...\n");
         }
         /// <summary>
         /// The <c>GetRows</c> override method that combines and formats all rows of data.
@@ -110,18 +110,18 @@ namespace ReportLibrary.OfficeApps
 
             var gui = Guid.NewGuid();
 
-            workbook.SaveAs($"BaoCaoXe_{gui}.xlsx", XlSaveAsAccessMode.xlShared);
+            workbook.SaveAs($"ExcelReport_{gui}.xlsx", XlSaveAsAccessMode.xlShared);
 
-            return new StringBuilder("Dữ liệu đã thêm...\n" + "tệp Excel đã tạo có tên BaoCaoXe.xlsx");
+            return new StringBuilder("Added data...\n" + "Excel file created at ExcelReport.xlsx");
         }
         /// <summary>
         /// The <c>GetTitle</c> override method that gets title data
         /// </summary>
         protected override StringBuilder GetTitle()
         {
-            worksheet.Cells[1, 1] = "Báo Cáo";
+            worksheet.Cells[1, 1] = "My Report";
 
-            return new StringBuilder("Tựa đề đã thêm...\n");
+            return new StringBuilder("Added title...\n");
         }
     }
 }

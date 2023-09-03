@@ -38,10 +38,10 @@ namespace ReportLibrary.BusinessRules
     /// </summary>
     public enum ReportTypeEnumeration
     {
+        ExcelDynamic,
+        ExcelTyped,
         Html,
         Markdown,
-        ExcelTyped,
-        ExcelDynamic,
         Pdf
     }
 }

@@ -54,7 +54,7 @@ namespace ReportLibraryTest
                     ItemUnit = "kg",
                     ItemPrice = 15.95m,
                     ItemNote = "",
-                    ISOutStock = "0"
+                    IsOutStock = "0"
                 },
                 new Inventory
                 {
@@ -64,7 +64,7 @@ namespace ReportLibraryTest
                     ItemUnit = "liter",
                     ItemPrice = 8.95m,
                     ItemNote = "Go to Cart",
-                    ISOutStock = "0"
+                    IsOutStock = "0"
                 },
                 new Inventory
                 {
@@ -74,14 +74,13 @@ namespace ReportLibraryTest
                     Count = 2,
                     ItemPrice = 5.95m,
                     ItemNote = "Out of stock",
-                    ISOutStock = "1"
+                    IsOutStock = "1"
                 }
             };
 
-            var expectedResult = "Tựa đề đã thêm...\nĐề mục đã thêm...\nDữ liệu đã thêm...\ntệp Excel đã tạo có tên BaoCaoXe.xlsx";
+            var expectedResult = "Added title...\nAdded header...\nAdded data...\nExcel file created at ExcelReport.xlsx";
 
-            string report =
-                new ReportBusiness<Inventory>()
+            string report = new ReportBusiness<Inventory>()
                 .GenerateReport(inventory, ReportTypeEnumeration.ExcelDynamic);
 
             Assert.AreEqual(expectedResult, report);
